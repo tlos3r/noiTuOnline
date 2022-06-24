@@ -1,24 +1,28 @@
 <template>
-    <div id="welcome-room">
-     <div id="welcome-text">
-         <h2>Ai hiểu bạn nhất ?</h2>
-         <span>Developed by <a href="https://www.facebook.com/Loserr.F" target="_blank" rel="noopener noreferrer">Fu</a> ☃️</span>
-     </div>
-     <div id="create-or-join">
-        <button class="btn">Tạo phòng</button>
-        <button class="btn">Tham gia với mã mời</button>
-     </div>
-  </div>
+   <div id="welcome-room">
+      <div id="welcome-text">
+         <h2>Nối từ online</h2>
+         <span
+            >Developed by
+            <a href="https://www.facebook.com/tlos3r" target="_blank" rel="link to facebook">Fu</a>
+            ☃️</span
+         >
+      </div>
+      <form action="./WaitingRoom.vue">
+         <div id="create-or-join">
+            <button class="btn">Tạo phòng</button>
+            <button class="btn">Tham gia với mã mời</button>
+         </div>
+      </form>
+   </div>
 </template>
 
 <script>
 export default {
-  data() {
-    return {
-
-    }
-  }
-}
+   data() {
+      return {};
+   },
+};
 </script>
 
 <style lang="scss">
@@ -35,7 +39,7 @@ export default {
       align-items: center;
       justify-content: center;
       .btn {
-         margin : 100px 15px 15px 15px;
+         margin: 100px 15px 15px 15px;
          background-color: #a09795;
          color: white;
          font-weight: bold;

@@ -1,4 +1,4 @@
-# whoknownebetter
+# Word chain Vietnamese ver
 
 ## Project setup
 ```
