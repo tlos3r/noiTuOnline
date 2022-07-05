@@ -8,7 +8,7 @@
             ☃️</span
          >
       </div>
-      <form action="./WaitingRoom.vue">
+      <form action="">
          <div id="create-or-join">
             <button class="btn">Tạo phòng</button>
             <button class="btn">Tham gia với mã mời</button>

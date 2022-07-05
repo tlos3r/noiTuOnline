@@ -1,6 +1,14 @@
 import { createApp } from 'vue'
+import { createRouter, createWebHistory } from 'vue-router'
 import App from './App.vue'
+import "./Config/reset.css"
 import "bootstrap/dist/css/bootstrap.min.css"
-import player from './Config/player'
+import routes from './Config/routes'
+import app from './Config/Firebase'
 
-createApp(App).use(player).mount('#app')
+const router = createRouter({
+    history: createWebHistory(),
+    routes
+})
+
+createApp(App).use(router, app).mount('#app')
