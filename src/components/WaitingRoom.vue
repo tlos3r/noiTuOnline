@@ -3,12 +3,10 @@
       <div class="container-fluid">
          <div class="row">
             <div id="list-player" class="col-12 mt-5 text-center justify-content-between align-items-center">
+               <p class="font-weight-bold">Đây là mã phòng để mời người khác tham gia cùng mình :{{ gameId }}</p>
                <h3>Người chơi</h3>
                <div class="mt-4 player">
-                  <div class="player-name">
-                     {{ playerName }}
-                     <input type="text" v-model="playerName" />
-                  </div>
+                  <div class="player-list"></div>
                </div>
             </div>
          </div>
@@ -17,54 +15,14 @@
 </template>
 
 <script>
-import { getAuth, signInAnonymously, onAuthStateChanged } from "firebase/auth";
-import { getDatabase, ref, set } from "firebase/database";
 export default {
+   props: ["gameId", "user"],
    data() {
       return {
          playerName: "",
       };
    },
    methods: {},
-   mounted() {
-      const fullName = [
-         "Gia Linh",
-         "Thanh Mai",
-         "Trúc",
-         "Ngọc",
-         "Thành",
-         "Phong",
-         "Thu",
-         "Tiến",
-         "Trường",
-         "Quân",
-         "Tùng",
-      ];
-      const name = fullName[Math.floor(Math.random() * fullName.length)];
-      const auth = getAuth();
-      signInAnonymously(auth)
-         .then(() => {
-            // you're log in
-         })
-         .catch((error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            console.log(errorCode, errorMessage);
-         });
-      onAuthStateChanged(auth, (user) => {
-         if (user) {
-            const playerId = user.uid;
-            const db = getDatabase();
-            set(ref(db, `players/${playerId}`), {
-               id: playerId,
-               name,
-            });
-         } else {
-            // User is signed out
-            // ...
-         }
-      });
-   },
 };
 </script>
 

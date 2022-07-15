@@ -6,7 +6,8 @@
 </template>
 
 <script>
-// import dictionaryData from "raw-loader!../assets/words.txt";
+// eslint-disable-next-line no-unused-vars
+import dictionaryData from "raw-loader!../assets/words.txt";
 export default {
    data() {
       return {

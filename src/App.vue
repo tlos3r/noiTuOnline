@@ -1,17 +1,21 @@
 <template>
    <div>
-      <router-view></router-view>
+      <WaitingRoom />
    </div>
 </template>
 
 <script>
+//import WelcomeRoom from "./components/WelcomeRoom.vue";
 // import StartingRoom from "./components/StartingRoom.vue";
-// import WaitingRoom from "./components/WaitingRoom.vue";
+import WaitingRoom from "./components/WaitingRoom.vue";
+// StartingRoom, WaitingRoom,
 
 export default {
-   //components: { StartingRoom, WaitingRoom },
+   components: { WaitingRoom },
    data() {
-      return {};
+      return {
+         allPlayer: [],
+      };
    },
    methods: {},
 };
